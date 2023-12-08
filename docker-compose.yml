@@ -1,13 +1,27 @@
 version: "3"
 
 services:
-  api:
-    build:
-      context: .
-      dockerfile: ./Dockerfile
-    container_name: api
+  app:
+    build: .
+    container_name: app
     volumes:
       - .:/home/node/app
     ports:
-    - 3000:3000
+      - "3000:3000"
+      - "5555:5555"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+  db:
+    build: db
+    container_name: mongo
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: root
+      MONGO_REPLICA_HOST: db
+    volumes:
+      - mongodb_data:/data/db
+    ports:
+      - "27017:27017"
 
+volumes:
+  mongodb_data:
+    driver: local

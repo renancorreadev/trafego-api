@@ -2,14 +2,44 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/docker-existing-docker-compose
 {
 	"name": "Test",
-	// Update the 'dockerComposeFile' list if you have more compose files or use different names.
-	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
 	"dockerComposeFile": [
 		"../docker-compose.yml",
 		"docker-compose.yml"
 	],
-	// The 'service' property is the name of the service for the container that VS Code should
-	// use. Update this value and .devcontainer/docker-compose.yml to the real service name.
 	"service": "app",
-	"workspaceFolder": "/home/node/app"
+	"workspaceFolder": "/home/node/app",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"humao.rest-client",
+				"prisma.prisma",
+				"ms-vscode.vscode-typescript-next",
+				"ashinzekene.nestjs",
+				"aaron-bond.better-comments",
+				"adam-bender.commit-message-editor",
+				"alefragnani.bookmarks",
+				"chakrounanas.turbo-console-log",
+				"chrmarti.regex",
+				"dart-code.dart-code",
+				"donjayamanne.githistory",
+				"dbaeumer.vscode-eslint",
+				"eamodio.gitlens",
+				"github.codespaces",
+				"github.remotehub",
+				"github.vscode-pull-request-github",
+				"howardzuo.vscode-git-tags",
+				"idleberg.icon-fonts",
+				"kamikillerto.vscode-colorize",
+				"ms-azuretools.vscode-docker",
+				"oderwat.indent-rainbow",
+				"tabnine.tabnine-vscode",
+				"vinirossa.vscode-gitandgithub-pack",
+				"vscode-icons-team.vscode-icons",
+				"wayou.vscode-todo-highlight",
+				"xabikos.javascriptsnippets",
+				"ziyasal.vscode-open-in-github",
+				"codeium.codeium"
+			]
+		}
+	}
 }
